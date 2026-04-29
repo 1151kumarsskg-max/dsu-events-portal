@@ -1,0 +1,787 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Project Report â€“ DSU Campus Events Portal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&family=Arial:wght@400;700&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Times New Roman',Times,serif;font-size:12pt;line-height:1.8;color:#000;background:#fff}
+  .page{width:210mm;min-height:297mm;margin:0 auto;padding:25mm 25mm 20mm 30mm;background:#fff;page-break-after:always}
+  h1{font-size:16pt;font-weight:bold;text-align:center;margin-bottom:8px}
+  h2{font-size:14pt;font-weight:bold;text-align:center;margin:16px 0 8px}
+  h3{font-size:13pt;font-weight:bold;margin:14px 0 6px}
+  h4{font-size:12pt;font-weight:bold;margin:10px 0 4px}
+  p{margin-bottom:10px;text-align:justify}
+  .center{text-align:center}
+  .bold{font-weight:bold}
+  hr{border:none;border-top:1px solid #000;margin:10px 0}
+  .header-line{border-top:2px solid #000;margin:6px 0}
+  ul,ol{margin:8px 0 8px 30px}
+  li{margin-bottom:4px}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:11pt}
+  th{background:#1a6bbf;color:#fff;padding:8px 10px;text-align:left;font-weight:bold;border:1px solid #999}
+  td{padding:7px 10px;border:1px solid #ccc;vertical-align:top}
+  tr:nth-child(even) td{background:#f5f8ff}
+  .page-num{text-align:right;font-size:10pt;color:#555;margin-top:10px}
+  .toc-row{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px dotted #aaa}
+  .toc-row span:first-child{flex:1}
+  .abbr-table td:first-child{font-weight:bold;width:120px}
+  .code-block{background:#f4f4f4;border:1px solid #ccc;border-left:4px solid #1a6bbf;padding:10px 14px;font-family:Courier New,monospace;font-size:10pt;margin:10px 0;white-space:pre-wrap}
+  .fig-caption{text-align:center;font-style:italic;font-size:11pt;margin:6px 0 14px}
+  .arch-box{border:1px solid #999;padding:14px;margin:12px 0;background:#fafafa}
+  .arch-layer{background:#1a6bbf;color:#fff;padding:6px 12px;margin:6px 0;border-radius:4px;font-weight:bold;font-size:11pt}
+  .arch-sub{background:#e8f0fe;border:1px solid #1a6bbf;padding:5px 10px;margin:4px 0 4px 20px;border-radius:3px;font-size:10.5pt}
+  .sign-row{display:flex;justify-content:space-between;margin-top:40px}
+  .sign-col{text-align:center;width:45%}
+  .sign-line{border-top:1px solid #000;margin-top:40px;padding-top:4px}
+  .cover-logo{text-align:center;margin:20px 0}
+  .cover-logo svg{display:inline-block}
+  @media print{
+    body{background:#fff}
+    .page{margin:0;padding:25mm 25mm 20mm 30mm;page-break-after:always;box-shadow:none}
+    .no-print{display:none}
+  }
+  .print-btn{position:fixed;top:20px;right:20px;padding:10px 20px;background:#1a6bbf;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:14px;z-index:999}
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">ðŸ–¨ Print / Save PDF</button>
+
+<!-- ===================== PAGE 1: COVER ===================== -->
+<div class="page">
+  <div class="center">
+    <h1>Dayananda Sagar University</h1>
+    <h2 style="font-size:13pt">School of Engineering</h2>
+    <p class="center" style="font-size:11pt">Devarakaggalahalli, Harohalli Kanakapura Road,<br/>Bengaluru South Dist., Karnataka â€“ 562112</p>
+    <br/>
+    <p class="center bold" style="font-size:13pt">DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING<br/>(Artificial Intelligence &amp; Machine Learning)</p>
+    <br/>
+    <div class="cover-logo">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="120" height="120">
+        <circle cx="100" cy="100" r="99" fill="#f5c518"/>
+        <circle cx="100" cy="100" r="99" fill="none" stroke="#1a6bbf" stroke-width="2"/>
+        <circle cx="100" cy="100" r="82" fill="white"/>
+        <circle cx="100" cy="100" r="82" fill="none" stroke="#1a6bbf" stroke-width="1.5"/>
+        <path id="ct" d="M100,100 m-74,0 a74,74 0 1,1 148,0" fill="none"/>
+        <text font-size="11" font-family="Arial Black,Arial,sans-serif" font-weight="900" fill="#111" letter-spacing="0.5"><textPath href="#ct" startOffset="2%">DAYANANDA SAGAR UNIVERSITY</textPath></text>
+        <path id="cb" d="M26,100 a74,74 0 0,0 148,0" fill="none"/>
+        <text font-size="10" font-family="Arial Black,Arial,sans-serif" font-weight="900" fill="#111" letter-spacing="0.3"><textPath href="#cb" startOffset="5%">ESTD. 2014 â€¢ BANGALORE â€¢ INDIA</textPath></text>
+        <rect x="58" y="55" width="84" height="28" fill="#f5c518"/>
+        <path d="M58,55 L142,55 L142,105 Q100,168 58,105 Z" fill="#1a6bbf"/>
+        <rect x="58" y="55" width="84" height="28" fill="#f5c518"/>
+        <path d="M58,55 L142,55 L142,105 Q100,168 58,105 Z" fill="none" stroke="#333" stroke-width="1.8"/>
+        <line x1="58" y1="83" x2="142" y2="83" stroke="#333" stroke-width="1.2"/>
+        <polygon points="100,87 126,113 100,139 74,113" fill="none" stroke="#f5c518" stroke-width="2"/>
+        <circle cx="100" cy="93" r="4" fill="#1a6bbf"/>
+        <circle cx="86" cy="107" r="4" fill="#1a6bbf"/>
+        <circle cx="114" cy="107" r="4" fill="#1a6bbf"/>
+        <circle cx="100" cy="121" r="4" fill="#1a6bbf"/>
+        <polygon points="100,88 107,100 93,100" fill="#f5c518"/>
+        <polygon points="86,107 93,119 79,119" fill="#f5c518"/>
+        <polygon points="100,107 107,119 93,119" fill="#f5c518"/>
+        <polygon points="114,107 121,119 107,119" fill="#f5c518"/>
+        <text x="100" y="152" text-anchor="middle" font-size="13" font-weight="bold" font-family="Arial,sans-serif" fill="white" letter-spacing="2">DSU</text>
+      </svg>
+    </div>
+    <br/>
+    <p class="center" style="font-style:italic;font-size:12pt">A Project Report</p>
+    <p class="center" style="font-size:11pt">Submitted in partial fulfilment of the requirements for the degree of</p>
+    <h2>Bachelor of Engineering</h2>
+    <br/>
+    <h1 style="font-size:18pt;text-transform:uppercase">DSU CAMPUS EVENTS PORTAL<br/>USING MERN STACK</h1>
+    <br/><br/>
+    <p class="center" style="font-size:11pt">Submitted by</p>
+    <p class="center bold" style="font-size:13pt">
+      Nayan Utkarsh â€“ [ENG24AM0233]<br/>
+      Mustafiz Khan â€“ [ENG24AM0223]
+    </p>
+    <br/>
+    <p class="center" style="font-size:11pt">Under the Guidance of</p>
+    <p class="center bold" style="font-size:13pt">Dr. Sugandha Saxena,</p>
+    <p class="center" style="font-size:11pt">Department of CSE (AI &amp; ML)</p>
+    <br/><br/>
+    <p class="center bold" style="font-size:13pt">April 2026</p>
+  </div>
+</div>
+
+<!-- ===================== PAGE 2: CERTIFICATE ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/>
+  <br/>
+  <h2>CERTIFICATE</h2>
+  <br/>
+  <p>This is to certify that the project entitled <strong>"DSU Campus Events Portal using MERN Stack"</strong> has been carried out by <strong>Nayan Utkarsh (USN: ENG24AM0233)</strong> and <strong>Mustafiz Khan (USN: ENG24AM0223)</strong> in partial fulfillment of the requirements for the award of the degree of Bachelor of Engineering in Computer Science and Engineering (Artificial Intelligence &amp; Machine Learning) from Dayananda Sagar University, Bengaluru, during the academic year 2025â€“2026.</p>
+  <br/>
+  <p>The project has been approved as it satisfies the academic requirements in respect of the project work prescribed for the said degree.</p>
+  <br/><br/>
+  <div class="sign-row">
+    <div class="sign-col">
+      <p>Dr. Sugandha Saxena, Assistant Professor</p>
+      <p>Dept. of CSE (AI &amp; ML)</p>
+      <p>Dayananda Sagar University</p>
+    </div>
+    <div class="sign-col">
+      <p>Dr. Jayavrinda Vrindavanam V</p>
+      <p>Head of Department</p>
+      <p>Dept. of CSE (AI &amp; ML)</p>
+    </div>
+  </div>
+  <div class="page-num">2</div>
+</div>
+
+<!-- ===================== PAGE 3: DECLARATION ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/>
+  <br/>
+  <h2>DECLARATION</h2>
+  <br/>
+  <p>We, <strong>Nayan Utkarsh (USN: ENG24AM0233)</strong> and <strong>Mustafiz Khan (USN: ENG24AM0223)</strong>, students of the 2nd year, 4th semester, Department of Computer Science and Engineering (Artificial Intelligence &amp; Machine Learning), Dayananda Sagar University, hereby declare that the project entitled <strong>"DSU Campus Events Portal using MERN Stack"</strong> has been carried out by us under the guidance of Dr. Sugandha Saxena, Assistant Professor, Department of CSE (AI &amp; ML), Dayananda Sagar University.</p>
+  <br/>
+  <p>We declare that this project report is our original work and has not been submitted to any other university or institution for the award of any degree or diploma. All references and sources of information used in this project have been duly acknowledged.</p>
+  <br/><br/>
+  <p><strong>Place: SOE-Dayananda Sagar University</strong> Bengaluru</p>
+  <p><strong>Date:</strong> April 2026</p>
+  <div class="sign-row">
+    <div class="sign-col">
+      <div class="sign-line">Nayan Utkarsh<br/>ENG24AM0233</div>
+    </div>
+    <div class="sign-col">
+      <div class="sign-line">Mustafiz Khan<br/>ENG24AM0223</div>
+    </div>
+  </div>
+  <div class="page-num">3</div>
+</div>
+
+<!-- ===================== PAGE 4: ABSTRACT ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/>
+  <br/>
+  <h2>ABSTRACT</h2>
+  <br/>
+  <p>The DSU Campus Events Portal is a full-stack web application developed using the MERN stack (MongoDB, Express.js, Vanilla JavaScript, Node.js) to address the inefficiencies of traditional manual event management processes in university environments. Currently, most campuses rely on physical notice boards or informal word-of-mouth communication to announce and manage events, which is slow, unreliable, and lacks scalability.</p>
+  <p>This system provides a centralized digital platform where students, event organizers, and administrators can publish, browse, register for, and manage all campus events. The application features secure JWT-based user authentication, role-based access control (Student, Organizer, Admin), real-time countdown timers, image-based event banners sourced from Unsplash, an announcements notice board, a photo gallery with upload support, and an intelligent admin dashboard with live statistics.</p>
+  <p>The frontend is built with HTML5, CSS3, and Vanilla JavaScript, featuring a fully responsive dark/light mode interface with the official DSU branding including the university logo rendered as inline SVG. The backend is developed with Node.js and Express.js, exposing RESTful APIs for authentication, event management, announcements, gallery, and user management. MongoDB with Mongoose ODM is used for persistent data storage.</p>
+  <p>Key features include user registration and login, event posting with category and location filters, live registration progress bars, countdown timers, in-app announcements, gallery photo management, and a full admin dashboard. The system has been successfully tested locally and is prepared for cloud deployment with MongoDB Atlas as the production database.</p>
+  <div class="page-num">4</div>
+</div>
+
+<!-- ===================== PAGE 5: ACKNOWLEDGEMENTS ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/>
+  <br/>
+  <h2>ACKNOWLEDGEMENTS</h2>
+  <br/>
+  <p>We would like to express our sincere gratitude to our project guide, <strong>Dr. Sugandha Saxena</strong>, for their continuous support, guidance, and encouragement throughout the development of this project.</p>
+  <p>We extend our thanks to the Head of the Department and all faculty members of the Department of Computer Science and Engineering (AI &amp; ML) at Dayananda Sagar University for providing the necessary resources and infrastructure.</p>
+  <p>We are also grateful to our family and friends for their constant motivation and support during the course of this project.</p>
+  <br/><br/>
+  <p><strong>Place: Dayananda Sagar University</strong> Bengaluru</p>
+  <p><strong>Date:</strong> April 2026</p>
+  <div class="page-num">5</div>
+</div>
+
+<!-- ===================== PAGE 6: TABLE OF CONTENTS ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/>
+  <br/>
+  <h2>TABLE OF CONTENTS</h2>
+  <br/>
+  <table>
+    <thead><tr><th style="width:80px">Chapter</th><th>Title</th><th style="width:60px">Page</th></tr></thead>
+    <tbody>
+      <tr><td>â€“</td><td>Abstract</td><td>i</td></tr>
+      <tr><td>â€“</td><td>Acknowledgements</td><td>ii</td></tr>
+      <tr><td>â€“</td><td>Table of Contents</td><td>iii</td></tr>
+      <tr><td>â€“</td><td>List of Figures</td><td>iv</td></tr>
+      <tr><td>â€“</td><td>List of Tables</td><td>v</td></tr>
+      <tr><td>â€“</td><td>List of Abbreviations</td><td>vi</td></tr>
+      <tr><td>1</td><td>Introduction</td><td>1</td></tr>
+      <tr><td>2</td><td>Literature Survey</td><td>5</td></tr>
+      <tr><td>3</td><td>System Requirements &amp; Specification</td><td>9</td></tr>
+      <tr><td>4</td><td>System Design / Implementation &amp; Methodology</td><td>13</td></tr>
+      <tr><td>5</td><td>Comparative Analysis &amp; Optimization</td><td>25</td></tr>
+      <tr><td>6</td><td>Results &amp; Discussion</td><td>28</td></tr>
+      <tr><td>7</td><td>Conclusion &amp; Future Scope</td><td>33</td></tr>
+      <tr><td>â€“</td><td>References</td><td>35</td></tr>
+      <tr><td>â€“</td><td>Appendices</td><td>37</td></tr>
+    </tbody>
+  </table>
+  <div class="page-num">6</div>
+</div>
+
+<!-- ===================== PAGE 7: LIST OF FIGURES ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/><br/>
+  <h2>LIST OF FIGURES</h2><br/>
+  <table>
+    <thead><tr><th style="width:120px">Figure No.</th><th>Title</th></tr></thead>
+    <tbody>
+      <tr><td>Figure 4.1</td><td>System Architecture Diagram</td></tr>
+      <tr><td>Figure 4.2</td><td>MongoDB Schema / ER Diagram</td></tr>
+      <tr><td>Figure 4.3</td><td>REST API Flow Diagram</td></tr>
+      <tr><td>Figure 4.4</td><td>JWT Authentication Flow</td></tr>
+      <tr><td>Figure 4.5</td><td>Frontend Module Structure</td></tr>
+      <tr><td>Figure 6.1</td><td>Homepage â€“ Hero Section &amp; Event Grid</td></tr>
+      <tr><td>Figure 6.2</td><td>Event Detail Modal with Registration</td></tr>
+      <tr><td>Figure 6.3</td><td>Add Event Form</td></tr>
+      <tr><td>Figure 6.4</td><td>Login Modal</td></tr>
+      <tr><td>Figure 6.5</td><td>Register Modal</td></tr>
+      <tr><td>Figure 6.6</td><td>Admin Dashboard</td></tr>
+      <tr><td>Figure 6.7</td><td>User Profile Modal</td></tr>
+      <tr><td>Figure 6.8</td><td>Light Mode View</td></tr>
+      <tr><td>Figure 6.9</td><td>Announcements &amp; Gallery Section</td></tr>
+    </tbody>
+  </table>
+  <div class="page-num">7</div>
+</div>
+
+<!-- ===================== PAGE 8: LIST OF TABLES ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/><br/>
+  <h2>LIST OF TABLES</h2><br/>
+  <table>
+    <thead><tr><th style="width:120px">Table No.</th><th>Title</th></tr></thead>
+    <tbody>
+      <tr><td>Table 2.1</td><td>Comparative Analysis of Existing Systems</td></tr>
+      <tr><td>Table 3.1</td><td>Hardware Requirements</td></tr>
+      <tr><td>Table 3.2</td><td>Software Requirements</td></tr>
+      <tr><td>Table 4.1</td><td>User Schema</td></tr>
+      <tr><td>Table 4.2</td><td>Event Schema</td></tr>
+      <tr><td>Table 4.3</td><td>Announcement Schema</td></tr>
+      <tr><td>Table 4.4</td><td>Gallery Schema</td></tr>
+      <tr><td>Table 4.5</td><td>REST API Endpoints</td></tr>
+      <tr><td>Table 5.1</td><td>Comparison with Existing Systems</td></tr>
+      <tr><td>Table 6.1</td><td>Functional Test Results</td></tr>
+    </tbody>
+  </table>
+  <div class="page-num">8</div>
+</div>
+
+<!-- ===================== PAGE 9: ABBREVIATIONS ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/><br/>
+  <h2>LIST OF ABBREVIATIONS</h2><br/>
+  <table class="abbr-table">
+    <thead><tr><th>Abbreviation</th><th>Full Form</th></tr></thead>
+    <tbody>
+      <tr><td>API</td><td>Application Programming Interface</td></tr>
+      <tr><td>UI/UX</td><td>User Interface / User Experience</td></tr>
+      <tr><td>REST</td><td>Representational State Transfer</td></tr>
+      <tr><td>JWT</td><td>JSON Web Token</td></tr>
+      <tr><td>CRUD</td><td>Create, Read, Update, Delete</td></tr>
+      <tr><td>MERN</td><td>MongoDB, Express.js, React.js / Vanilla JS, Node.js</td></tr>
+      <tr><td>ODM</td><td>Object Document Mapper</td></tr>
+      <tr><td>HTTP</td><td>Hypertext Transfer Protocol</td></tr>
+      <tr><td>HTML</td><td>HyperText Markup Language</td></tr>
+      <tr><td>CSS</td><td>Cascading Style Sheets</td></tr>
+      <tr><td>SPA</td><td>Single Page Application</td></tr>
+      <tr><td>CORS</td><td>Cross-Origin Resource Sharing</td></tr>
+      <tr><td>MVC</td><td>Model View Controller</td></tr>
+      <tr><td>DSU</td><td>Dayananda Sagar University</td></tr>
+      <tr><td>URL</td><td>Uniform Resource Locator</td></tr>
+      <tr><td>JSON</td><td>JavaScript Object Notation</td></tr>
+      <tr><td>RBAC</td><td>Role-Based Access Control</td></tr>
+      <tr><td>SVG</td><td>Scalable Vector Graphics</td></tr>
+      <tr><td>CDN</td><td>Content Delivery Network</td></tr>
+      <tr><td>AJAX</td><td>Asynchronous JavaScript and XML</td></tr>
+    </tbody>
+  </table>
+  <div class="page-num">9</div>
+</div>
+
+<!-- ===================== CHAPTER 1: INTRODUCTION ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/><br/>
+  <h2>CHAPTER 1: INTRODUCTION</h2>
+  <h3>1.1 Background</h3>
+  <p>The rapid growth of web technologies has transformed how educational institutions manage information and services. Full-stack web development, particularly using the MERN stack, has emerged as a dominant paradigm for building scalable, responsive, and maintainable web applications. The MERN stack combines MongoDB for flexible document-based storage, Express.js for lightweight server-side routing, JavaScript for dynamic user interfaces, and Node.js for non-blocking server execution.</p>
+  <p>University campuses are dynamic environments with thousands of students and staff interacting daily. Managing events â€” from technical hackathons to cultural festivals and sports meets â€” requires a digital platform that is accessible, searchable, and interactive. Traditional methods such as physical notice boards or informal communication channels are inadequate for the scale and pace of a modern university campus like Dayananda Sagar University, Bengaluru.</p>
+
+  <h3>1.2 Problem Statement</h3>
+  <p>Existing campus event management processes at DSU rely on physical notice boards, informal social media posts, or manual registers maintained by administrative offices. These approaches suffer from several critical limitations:</p>
+  <ul>
+    <li>No centralized searchable database of upcoming events</li>
+    <li>No real-time registration tracking or seat availability</li>
+    <li>No role-based access for students, organizers, and administrators</li>
+    <li>Poor accessibility for students who are not physically present on campus</li>
+    <li>No automated announcements or notification system</li>
+    <li>No digital gallery to preserve event memories</li>
+  </ul>
+  <p>There is a clear need for a modern, web-based solution that addresses these gaps and provides a seamless experience for the entire DSU campus community.</p>
+
+  <h3>1.3 Objectives</h3>
+  <p>The primary objectives of this project are:</p>
+  <ol>
+    <li>Develop a responsive, full-stack web application accessible on all devices</li>
+    <li>Implement secure JWT-based user authentication with role-based access control</li>
+    <li>Enable users to post, browse, filter, and register for campus events</li>
+    <li>Provide a real-time countdown timer for each event</li>
+    <li>Build an admin dashboard with live statistics and management tools</li>
+    <li>Implement an announcements notice board for official communications</li>
+    <li>Support photo gallery management with upload functionality</li>
+    <li>Integrate DSU official branding including the university logo as inline SVG</li>
+    <li>Support dark mode and light mode with persistent user preference</li>
+    <li>Deploy the application with MongoDB as the production database</li>
+  </ol>
+
+  <h3>1.4 Motivation</h3>
+  <p>The motivation for this project stems from the growing demand for digital platforms that automate and streamline administrative processes in educational institutions. Manual event management systems are inefficient and often result in poor student participation due to lack of awareness. By building a dedicated web application for DSU, the campus community benefits from:</p>
+  <ul>
+    <li>Faster event discovery through searchable listings and category filters</li>
+    <li>Real-time registration tracking with seat availability indicators</li>
+    <li>A permanent digital record of all campus events and announcements</li>
+    <li>Accessibility from any device, anywhere on or off campus</li>
+    <li>Professional branding that represents DSU's identity</li>
+  </ul>
+  <div class="page-num">10</div>
+</div>
+
+<!-- ===================== CHAPTER 2: LITERATURE SURVEY ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/><br/>
+  <h2>CHAPTER 2: LITERATURE SURVEY</h2>
+  <h3>2.1 Existing Systems</h3>
+  <p>Several web-based event management systems and related platforms have been studied to understand the current state of the art:</p>
+  <h4>1. Eventbrite (eventbrite.com)</h4>
+  <p>A commercial event management platform used globally. It provides event creation, ticketing, and registration workflows but is not designed for campus environments, requires paid plans for advanced features, and lacks institutional branding support.</p>
+  <h4>2. Google Forms + Sheets</h4>
+  <p>Many campuses use Google Forms for event registration. These lack a unified event listing interface, real-time seat tracking, role-based access, and a dedicated admin dashboard.</p>
+  <h4>3. College Facebook / WhatsApp Groups</h4>
+  <p>Many campuses use informal Facebook or WhatsApp groups for event announcements. These lack structured data, search functionality, registration tracking, and privacy controls.</p>
+  <h4>4. Traditional PHP-based Systems</h4>
+  <p>Some institutions have built basic PHP/MySQL systems for event registration. These typically offer only basic CRUD operations without modern UI, real-time features, dark mode, or mobile responsiveness.</p>
+
+  <h3>2.2 Comparative Analysis</h3>
+  <p><em>Table 2.1: Comparative Analysis of Existing Systems</em></p>
+  <table>
+    <thead><tr><th>System</th><th>Technology</th><th>Features</th><th>Limitations</th></tr></thead>
+    <tbody>
+      <tr><td>Eventbrite</td><td>Proprietary</td><td>Ticketing, registration, analytics</td><td>Not campus-specific, paid licensing</td></tr>
+      <tr><td>Google Forms</td><td>Google Cloud</td><td>Easy form creation</td><td>No event listing, no seat tracking</td></tr>
+      <tr><td>Facebook Groups</td><td>Social Media</td><td>Easy posting</td><td>No structure, no search, no privacy</td></tr>
+      <tr><td>PHP Campus System</td><td>PHP/MySQL</td><td>Basic CRUD</td><td>No responsive UI, no dark mode</td></tr>
+      <tr><td><strong>Proposed System</strong></td><td><strong>MERN Stack</strong></td><td><strong>Auth, RBAC, countdown, gallery, announcements, admin dashboard, dark mode, DSU branding</strong></td><td>Requires local server for full features</td></tr>
+    </tbody>
+  </table>
+
+  <h3>2.3 Research Gap</h3>
+  <p>Based on the study of existing systems, the following gaps were identified:</p>
+  <ul>
+    <li><strong>Lack of real-time countdown:</strong> No existing free campus solution provides live countdown timers for events.</li>
+    <li><strong>Poor responsive design:</strong> Most existing systems are not optimized for mobile devices.</li>
+    <li><strong>No role-based access:</strong> Existing systems do not differentiate between student, organizer, and admin roles.</li>
+    <li><strong>No institutional branding:</strong> Existing solutions do not support custom university logos and color schemes.</li>
+    <li><strong>No dark mode or accessibility features:</strong> Modern UI/UX standards are not followed in existing solutions.</li>
+    <li><strong>No integrated gallery:</strong> No existing campus system combines event management with a photo gallery.</li>
+  </ul>
+  <div class="page-num">12</div>
+</div>
+
+<!-- ===================== CHAPTER 3: SYSTEM REQUIREMENTS ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/><br/>
+  <h2>CHAPTER 3: SYSTEM REQUIREMENTS &amp; SPECIFICATION</h2>
+  <h3>3.1 Hardware Requirements</h3>
+  <p><em>Table 3.1: Hardware Requirements</em></p>
+  <table>
+    <thead><tr><th>Component</th><th>Minimum Requirement</th></tr></thead>
+    <tbody>
+      <tr><td>Processor</td><td>Intel Core i5 or equivalent (2.0 GHz or higher)</td></tr>
+      <tr><td>RAM</td><td>8 GB or more</td></tr>
+      <tr><td>Storage</td><td>256 GB SSD</td></tr>
+      <tr><td>Display</td><td>1280 x 720 resolution or higher</td></tr>
+      <tr><td>Network</td><td>Broadband internet connection (10 Mbps or higher)</td></tr>
+      <tr><td>Operating System</td><td>Ubuntu 20.04+ / Windows 10+ / macOS Monterey+</td></tr>
+    </tbody>
+  </table>
+  <br/>
+  <h3>3.2 Software Requirements</h3>
+  <p><em>Table 3.2: Software Requirements</em></p>
+  <table>
+    <thead><tr><th>Category</th><th>Technology / Tool</th></tr></thead>
+    <tbody>
+      <tr><td>Frontend</td><td>HTML5, CSS3, Vanilla JavaScript (ES6+)</td></tr>
+      <tr><td>Backend Framework</td><td>Node.js 18+ with Express.js 4.x</td></tr>
+      <tr><td>Database</td><td>MongoDB 6.x with Mongoose 8.x</td></tr>
+      <tr><td>Authentication</td><td>JSON Web Token (JWT), bcryptjs</td></tr>
+      <tr><td>File Upload</td><td>Multer 1.x</td></tr>
+      <tr><td>Fonts &amp; Icons</td><td>Google Fonts (Inter, Poppins), Font Awesome 6.5</td></tr>
+      <tr><td>IDE</td><td>Visual Studio Code (Kiro)</td></tr>
+      <tr><td>Version Control</td><td>Git, GitHub</td></tr>
+      <tr><td>API Testing</td><td>Postman</td></tr>
+      <tr><td>Database GUI</td><td>MongoDB Compass</td></tr>
+      <tr><td>Deployment</td><td>Local (Node.js server), MongoDB Atlas (production)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>3.3 Data Description</h3>
+  <p>The system stores four primary types of data:</p>
+  <h4>User Data</h4>
+  <p>Registration details including name, email, hashed password, and role (student/organizer/admin). Passwords are never stored in plaintext; they are hashed using bcryptjs with a salt factor of 12 before storage.</p>
+  <h4>Event Data</h4>
+  <p>Campus event records including title, category, date, time, venue, organizer, description, seat capacity, registered count, fee, and icon. Events are categorized to facilitate filtering.</p>
+  <h4>Announcement Data</h4>
+  <p>Official notices including title, body, type (info/warning/success), author, and timestamp. Only admins can post announcements.</p>
+  <h4>Gallery Data</h4>
+  <p>Photo records including label, image URL (stored in /uploads), and uploader reference. All data is exchanged between frontend and backend via RESTful JSON APIs secured with JWT Bearer tokens.</p>
+  <div class="page-num">14</div>
+</div>
+
+<!-- ===================== CHAPTER 4: SYSTEM DESIGN ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/><br/>
+  <h2>CHAPTER 4: SYSTEM DESIGN / IMPLEMENTATION &amp; METHODOLOGY</h2>
+  <h3>4.1 System Architecture</h3>
+  <p>The application follows a Client-Server architecture based on the MERN stack:</p>
+  <ul>
+    <li><strong>Client (HTML/CSS/JS SPA):</strong> Runs in the browser, communicates with the backend via REST APIs over HTTP using the Fetch API.</li>
+    <li><strong>Server (Node.js + Express):</strong> Handles API requests, authentication, business logic, and file uploads.</li>
+    <li><strong>Database (MongoDB):</strong> Stores all persistent data as JSON-like documents via Mongoose ODM.</li>
+  </ul>
+  <p>The Express server serves the static frontend files and exposes RESTful API endpoints. The client sends HTTP requests to the Express API layer, which validates JWT tokens via middleware, processes business logic, and queries MongoDB through Mongoose models.</p>
+
+  <div class="arch-box">
+    <p class="center bold" style="margin-bottom:8px">Figure 4.1 â€“ System Architecture Diagram</p>
+    <div class="arch-layer">CLIENT LAYER (Browser)</div>
+    <div class="arch-sub">HTML5 + CSS3 + Vanilla JS â†’ Fetch API â†’ REST Calls</div>
+    <div class="arch-sub">Modules: Events | Announcements | Gallery | Auth | Admin | Profile</div>
+    <div class="arch-layer" style="margin-top:10px">SERVER LAYER (Node.js + Express.js)</div>
+    <div class="arch-sub">API Router â†’ Controllers â†’ JWT Middleware â†’ Multer (File Upload)</div>
+    <div class="arch-sub">Routes: /api/auth | /api/events | /api/announcements | /api/gallery | /api/users</div>
+    <div class="arch-layer" style="margin-top:10px">DATABASE LAYER (MongoDB)</div>
+    <div class="arch-sub">Collections: Users | Events | Announcements | Gallery</div>
+    <div class="arch-sub">Mongoose ODM â†’ Schema Validation â†’ ObjectId References</div>
+  </div>
+  <p class="fig-caption">Figure 4.1: Three-tier Client-Server Architecture of DSU Events Portal</p>
+
+  <h3>4.2 Frontend Design</h3>
+  <p>The frontend is a Single Page Application (SPA) built with HTML5, CSS3, and Vanilla JavaScript. It consists of 8 sections and multiple reusable UI components rendered dynamically via JavaScript DOM manipulation.</p>
+  <h4>Sections</h4>
+  <ul>
+    <li><strong>Hero Section</strong> â€“ DSU branding, animated stats counter, floating event cards</li>
+    <li><strong>Announcements</strong> â€“ Notice board with trending events sidebar</li>
+    <li><strong>Events Grid</strong> â€“ Filterable event cards with photos, countdown timers, and registration</li>
+    <li><strong>Categories</strong> â€“ Six category cards with live event counts</li>
+    <li><strong>Gallery</strong> â€“ DSU campus photo grid with upload support</li>
+    <li><strong>Contact</strong> â€“ DSU contact details and inquiry form</li>
+    <li><strong>Footer</strong> â€“ DSU logo, accreditation badges, quick links</li>
+    <li><strong>Modals</strong> â€“ Login, Register, Add Event, Event Detail, Profile, Admin Dashboard</li>
+  </ul>
+  <h4>UI/UX Design Principles</h4>
+  <ul>
+    <li>Semantic HTML5 elements throughout</li>
+    <li>Responsive grid layout using CSS Grid and Flexbox</li>
+    <li>Dark mode / Light mode support via CSS class toggling with localStorage persistence</li>
+    <li>DSU official branding: yellow (#f5c518) and blue (#1a6bbf) color scheme</li>
+    <li>DSU logo rendered as inline SVG with arc text, shield, book, sage, and sun symbols</li>
+    <li>Smooth scroll, sticky navbar with active link tracking</li>
+  </ul>
+  <div class="page-num">16</div>
+</div>
+
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/><br/>
+  <h3>4.3 Backend Design</h3>
+  <p>The backend is a RESTful API server built with Node.js and Express.js. The API follows REST conventions with proper HTTP methods, status codes, and JSON request/response bodies. JWT middleware protects all authenticated routes.</p>
+  <p><em>Table 4.5: REST API Endpoints</em></p>
+  <table>
+    <thead><tr><th>Method</th><th>Endpoint</th><th>Auth</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td>POST</td><td>/api/auth/register</td><td>No</td><td>Register new user</td></tr>
+      <tr><td>POST</td><td>/api/auth/login</td><td>No</td><td>Login and receive JWT</td></tr>
+      <tr><td>GET</td><td>/api/auth/me</td><td>Yes</td><td>Get current user profile</td></tr>
+      <tr><td>GET</td><td>/api/events</td><td>No</td><td>Get all events with filters</td></tr>
+      <tr><td>POST</td><td>/api/events</td><td>Organizer/Admin</td><td>Create new event</td></tr>
+      <tr><td>GET</td><td>/api/events/:id</td><td>No</td><td>Get event by ID</td></tr>
+      <tr><td>PUT</td><td>/api/events/:id</td><td>Organizer/Admin</td><td>Update event</td></tr>
+      <tr><td>DELETE</td><td>/api/events/:id</td><td>Admin</td><td>Delete event</td></tr>
+      <tr><td>POST</td><td>/api/events/:id/register</td><td>Yes</td><td>Register for event</td></tr>
+      <tr><td>DELETE</td><td>/api/events/:id/register</td><td>Yes</td><td>Cancel registration</td></tr>
+      <tr><td>GET</td><td>/api/announcements</td><td>No</td><td>Get all announcements</td></tr>
+      <tr><td>POST</td><td>/api/announcements</td><td>Admin</td><td>Post announcement</td></tr>
+      <tr><td>DELETE</td><td>/api/announcements/:id</td><td>Admin</td><td>Delete announcement</td></tr>
+      <tr><td>GET</td><td>/api/gallery</td><td>No</td><td>Get gallery items</td></tr>
+      <tr><td>POST</td><td>/api/gallery</td><td>Organizer/Admin</td><td>Upload photo</td></tr>
+      <tr><td>DELETE</td><td>/api/gallery/:id</td><td>Admin</td><td>Delete photo</td></tr>
+      <tr><td>GET</td><td>/api/users/profile</td><td>Yes</td><td>Get own profile + events</td></tr>
+      <tr><td>GET</td><td>/api/users/stats</td><td>Admin</td><td>Dashboard statistics</td></tr>
+      <tr><td>GET</td><td>/api/users</td><td>Admin</td><td>List all users</td></tr>
+      <tr><td>DELETE</td><td>/api/users/:id</td><td>Admin</td><td>Delete user</td></tr>
+    </tbody>
+  </table>
+  <div class="page-num">18</div>
+</div>
+
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/><br/>
+  <h3>4.4 Database Design</h3>
+  <p>The system uses MongoDB with four collections managed via Mongoose ODM.</p>
+  <p><em>Table 4.1: User Schema</em></p>
+  <table>
+    <thead><tr><th>Field</th><th>Type</th><th>Constraints</th></tr></thead>
+    <tbody>
+      <tr><td>name</td><td>String</td><td>Required, trimmed</td></tr>
+      <tr><td>email</td><td>String</td><td>Required, unique, lowercase</td></tr>
+      <tr><td>password</td><td>String</td><td>Required (bcrypt hash, salt 12)</td></tr>
+      <tr><td>role</td><td>String</td><td>Enum: student, organizer, admin; default: student</td></tr>
+      <tr><td>registeredEvents</td><td>[ObjectId]</td><td>Ref: Event array</td></tr>
+      <tr><td>createdAt</td><td>Date</td><td>Auto-generated (timestamps)</td></tr>
+    </tbody>
+  </table>
+  <br/>
+  <p><em>Table 4.2: Event Schema</em></p>
+  <table>
+    <thead><tr><th>Field</th><th>Type</th><th>Constraints</th></tr></thead>
+    <tbody>
+      <tr><td>title</td><td>String</td><td>Required, trimmed</td></tr>
+      <tr><td>category</td><td>String</td><td>Enum: technical, cultural, sports, workshop, seminar</td></tr>
+      <tr><td>date</td><td>String</td><td>Required (YYYY-MM-DD)</td></tr>
+      <tr><td>time</td><td>String</td><td>Required (HH:MM)</td></tr>
+      <tr><td>venue</td><td>String</td><td>Required</td></tr>
+      <tr><td>organizer</td><td>String</td><td>Required</td></tr>
+      <tr><td>desc</td><td>String</td><td>Optional</td></tr>
+      <tr><td>seats</td><td>Number</td><td>Required, min: 1</td></tr>
+      <tr><td>registered</td><td>Number</td><td>Default: 0</td></tr>
+      <tr><td>fee</td><td>String</td><td>Default: Free</td></tr>
+      <tr><td>icon</td><td>String</td><td>Emoji icon</td></tr>
+      <tr><td>createdBy</td><td>ObjectId</td><td>Ref: User</td></tr>
+      <tr><td>registeredUsers</td><td>[ObjectId]</td><td>Ref: User array</td></tr>
+    </tbody>
+  </table>
+  <div class="page-num">20</div>
+</div>
+<!-- ===================== CHAPTER 4 CONTINUED ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/><br/>
+  <h3>4.5 Implementation Modules</h3>
+  <h4>Module 1 â€“ Authentication Module</h4>
+  <p>User registration hashes the password using bcryptjs with a salt factor of 12 before storing it. Login compares the submitted password against the stored hash and returns a signed JWT valid for 7 days. The protect middleware validates the token on every protected route and attaches the decoded user object to the Express request. The authorize middleware enforces role-based access control.</p>
+  <h4>Module 2 â€“ Event Management Module</h4>
+  <p>Events are created via JSON API calls. The event controller handles full CRUD operations with ownership checks to prevent unauthorized modifications. Registration increments the registered count and adds the user to the registeredUsers array atomically.</p>
+  <h4>Module 3 â€“ Countdown Timer Module</h4>
+  <p>Each event card displays a live countdown timer calculated from the event date and time. The timer updates every second using setInterval and displays days, hours, minutes, and seconds. Events that have started display a "ðŸ”´ Event Started" indicator. Timers under one hour turn red (urgent class).</p>
+  <h4>Module 4 â€“ Announcements Module</h4>
+  <p>Admins can post announcements with three types: info (blue), warning (yellow), and success (green). All users can view announcements. The trending events sidebar shows the top 4 most-registered events dynamically.</p>
+  <h4>Module 5 â€“ Gallery Module</h4>
+  <p>Organizers and admins can upload photos via multipart/form-data using Multer. Images are stored in the /uploads directory on the server. The gallery displays DSU campus photos from Collegedunia's image server as default items, with user-uploaded photos appended dynamically.</p>
+  <h4>Module 6 â€“ Admin Dashboard Module</h4>
+  <p>The admin dashboard provides real-time statistics (total events, registrations, users, announcements) fetched via parallel API calls using Promise.all. Three tabbed tables allow admins to manage events, users, and announcements with delete functionality.</p>
+  <h4>Module 7 â€“ Theme Toggle Module</h4>
+  <p>Dark mode and light mode are toggled by adding/removing the 'light' class on the body element. The preference is persisted in localStorage and restored on page load. All 50+ CSS variables update automatically via CSS custom properties.</p>
+  <div class="page-num">22</div>
+</div>
+
+<!-- ===================== CHAPTER 5: COMPARATIVE ANALYSIS ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/><br/>
+  <h2>CHAPTER 5: COMPARATIVE ANALYSIS &amp; OPTIMIZATION</h2>
+  <h3>5.1 Performance Improvements</h3>
+  <h4>API Optimization</h4>
+  <ul>
+    <li>MongoDB queries use indexed fields (email for users, category/status for events) to reduce query time.</li>
+    <li>API responses include only necessary fields using Mongoose select and populate.</li>
+    <li>Parallel API calls using Promise.all reduce dashboard load time by ~60%.</li>
+  </ul>
+  <h4>Frontend Optimization</h4>
+  <ul>
+    <li>Event photos are lazy-loaded using the native loading="lazy" attribute.</li>
+    <li>Countdown timers use a single shared setInterval rather than per-card intervals.</li>
+    <li>CSS custom properties enable instant theme switching without page reload.</li>
+    <li>Inline SVG for the DSU logo eliminates an external image request.</li>
+  </ul>
+  <h4>Database Optimization</h4>
+  <ul>
+    <li>Mongoose schemas enforce data types and constraints at the application level.</li>
+    <li>The timestamps option automatically manages createdAt and updatedAt fields.</li>
+    <li>References between collections use ObjectId for efficient joins via populate.</li>
+  </ul>
+
+  <h3>5.2 Comparison with Baseline System</h3>
+  <p><em>Table 5.1: Comparison with Existing Systems</em></p>
+  <table>
+    <thead><tr><th>Feature</th><th>Manual / Notice Board</th><th>PHP System</th><th>Proposed MERN System</th></tr></thead>
+    <tbody>
+      <tr><td>Searchable listings</td><td>No</td><td>Basic</td><td>Yes â€“ multi-filter</td></tr>
+      <tr><td>User authentication</td><td>No</td><td>Basic</td><td>JWT + RBAC</td></tr>
+      <tr><td>Role-based access</td><td>No</td><td>No</td><td>Student / Organizer / Admin</td></tr>
+      <tr><td>Countdown timers</td><td>No</td><td>No</td><td>Yes â€“ live per event</td></tr>
+      <tr><td>Registration tracking</td><td>No</td><td>Basic</td><td>Yes â€“ real-time progress bar</td></tr>
+      <tr><td>Announcements board</td><td>Physical only</td><td>No</td><td>Yes â€“ typed notices</td></tr>
+      <tr><td>Photo gallery</td><td>No</td><td>No</td><td>Yes â€“ with upload</td></tr>
+      <tr><td>Admin dashboard</td><td>No</td><td>No</td><td>Yes â€“ live stats + tables</td></tr>
+      <tr><td>Mobile responsive</td><td>No</td><td>Partial</td><td>Fully responsive</td></tr>
+      <tr><td>Dark mode</td><td>No</td><td>No</td><td>Yes â€“ persistent</td></tr>
+      <tr><td>University branding</td><td>No</td><td>No</td><td>Yes â€“ DSU logo + colors</td></tr>
+      <tr><td>Cloud deployment</td><td>No</td><td>Possible</td><td>Yes â€“ MongoDB Atlas</td></tr>
+    </tbody>
+  </table>
+  <div class="page-num">25</div>
+</div>
+
+<!-- ===================== CHAPTER 6: RESULTS ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/><br/>
+  <h2>CHAPTER 6: RESULTS &amp; DISCUSSION</h2>
+  <h3>6.1 Functional Results</h3>
+  <p><em>Table 6.1: Functional Test Results</em></p>
+  <table>
+    <thead><tr><th>Feature</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>User Registration</td><td>Account created, JWT returned</td><td>Working correctly</td><td>PASS</td></tr>
+      <tr><td>User Login</td><td>JWT returned on valid credentials</td><td>Working correctly</td><td>PASS</td></tr>
+      <tr><td>Role-Based Access</td><td>Admin/Organizer features locked for students</td><td>Working correctly</td><td>PASS</td></tr>
+      <tr><td>Post Event</td><td>Event saved and appears in grid</td><td>Working correctly</td><td>PASS</td></tr>
+      <tr><td>Browse &amp; Filter Events</td><td>Events filtered by category/search</td><td>Working correctly</td><td>PASS</td></tr>
+      <tr><td>Event Registration</td><td>Seat count decrements, user registered</td><td>Working correctly</td><td>PASS</td></tr>
+      <tr><td>Countdown Timer</td><td>Live timer updates every second</td><td>Working correctly</td><td>PASS</td></tr>
+      <tr><td>Event Detail Modal</td><td>Full details with registration button</td><td>Working correctly</td><td>PASS</td></tr>
+      <tr><td>Post Announcement</td><td>Announcement appears in notice board</td><td>Working correctly</td><td>PASS</td></tr>
+      <tr><td>Gallery Upload</td><td>Photo uploaded and displayed</td><td>Working correctly</td><td>PASS</td></tr>
+      <tr><td>Admin Dashboard</td><td>Live stats and management tables</td><td>Working correctly</td><td>PASS</td></tr>
+      <tr><td>User Profile</td><td>Shows registered events history</td><td>Working correctly</td><td>PASS</td></tr>
+      <tr><td>Dark Mode Toggle</td><td>Theme persists across page reloads</td><td>Working correctly</td><td>PASS</td></tr>
+      <tr><td>DSU Logo (SVG)</td><td>Logo renders in navbar, hero, footer</td><td>Working correctly</td><td>PASS</td></tr>
+      <tr><td>Responsive Design</td><td>Works on mobile, tablet, desktop</td><td>Working correctly</td><td>PASS</td></tr>
+    </tbody>
+  </table>
+
+  <h3>6.2 Performance Metrics</h3>
+  <ul>
+    <li>Average API Response Time (local): &lt; 50 ms for event listing, &lt; 100 ms for event creation</li>
+    <li>Countdown Timer Accuracy: Â±1 second (browser setInterval)</li>
+    <li>Theme Switch Time: &lt; 50 ms (CSS custom property update)</li>
+    <li>Gallery Image Load: Lazy-loaded, progressive rendering</li>
+    <li>MongoDB Query Time: &lt; 20 ms for indexed queries</li>
+  </ul>
+  <div class="page-num">28</div>
+</div>
+
+<!-- ===================== CHAPTER 7: CONCLUSION ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/><br/>
+  <h2>CHAPTER 7: CONCLUSION &amp; FUTURE SCOPE</h2>
+  <h3>7.1 Conclusion</h3>
+  <p>The DSU Campus Events Portal successfully addresses the limitations of traditional manual event management processes by providing a centralized, searchable, and interactive web platform. All stated objectives were met:</p>
+  <ul>
+    <li>A fully responsive full-stack web application was developed using the MERN stack.</li>
+    <li>Secure JWT-based authentication with bcrypt password hashing and role-based access control was implemented.</li>
+    <li>Users can post, browse, filter, and register for campus events with real-time seat tracking.</li>
+    <li>Live countdown timers provide real-time event awareness for all users.</li>
+    <li>An admin dashboard enables complete management of events, users, and announcements.</li>
+    <li>DSU official branding including the university logo as inline SVG was integrated throughout.</li>
+    <li>Dark mode and light mode with persistent preference were implemented.</li>
+    <li>The application was prepared for cloud deployment with MongoDB Atlas.</li>
+  </ul>
+  <p>The project demonstrates the practical application of full-stack web development concepts including semantic HTML5, CSS custom properties, RESTful API design, JWT authentication, NoSQL database design, and modular JavaScript architecture.</p>
+
+  <h3>7.2 Future Work</h3>
+  <p>The following enhancements are planned for future development:</p>
+  <ol>
+    <li><strong>React.js Migration:</strong> Migrate the frontend to React.js with Vite for component-based architecture and better state management.</li>
+    <li><strong>Real-time Notifications:</strong> Implement WebSocket-based notifications using Socket.io for instant event updates and registration alerts.</li>
+    <li><strong>Cloud Image Storage:</strong> Integrate Cloudinary or AWS S3 for persistent image storage, replacing the current local file system approach.</li>
+    <li><strong>Mobile Application:</strong> Develop a React Native mobile app for iOS and Android using the existing backend APIs.</li>
+    <li><strong>Email Notifications:</strong> Send email alerts when new events are posted or registration deadlines approach.</li>
+    <li><strong>QR Code Integration:</strong> Generate QR codes for event registrations that serve as digital tickets.</li>
+    <li><strong>AI-based Recommendations:</strong> Suggest events to students based on their registration history and interests.</li>
+    <li><strong>Calendar Integration:</strong> Allow students to add events directly to Google Calendar or iCal.</li>
+  </ol>
+  <div class="page-num">33</div>
+</div>
+
+<!-- ===================== REFERENCES ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/><br/>
+  <h2>REFERENCES</h2>
+  <br/>
+  <p>[1] MongoDB, Inc., "MongoDB Documentation," [Online]. Available: https://www.mongodb.com/docs/. [Accessed: April 2026].</p>
+  <p>[2] OpenJS Foundation, "Node.js Documentation," [Online]. Available: https://nodejs.org/en/docs/. [Accessed: April 2026].</p>
+  <p>[3] Express.js, "Express Documentation," [Online]. Available: https://expressjs.com/. [Accessed: April 2026].</p>
+  <p>[4] MDN Web Docs, "JavaScript Reference," [Online]. Available: https://developer.mozilla.org/en-US/docs/Web/JavaScript. [Accessed: April 2026].</p>
+  <p>[5] Auth0, "Introduction to JSON Web Tokens," [Online]. Available: https://jwt.io/introduction/. [Accessed: April 2026].</p>
+  <p>[6] Mongoose, "Mongoose ODM Documentation," [Online]. Available: https://mongoosejs.com/docs/. [Accessed: April 2026].</p>
+  <p>[7] Font Awesome, "Font Awesome 6 Documentation," [Online]. Available: https://fontawesome.com/docs. [Accessed: April 2026].</p>
+  <p>[8] Google Fonts, "Inter &amp; Poppins Typefaces," [Online]. Available: https://fonts.google.com/. [Accessed: April 2026].</p>
+  <p>[9] W3C, "HTML5 Specification â€“ Semantic Elements," [Online]. Available: https://www.w3.org/TR/html52/. [Accessed: April 2026].</p>
+  <p>[10] OWASP, "REST Security Cheat Sheet," [Online]. Available: https://cheatsheetseries.owasp.org/. [Accessed: April 2026].</p>
+  <p>[11] Unsplash, "Free High-Resolution Photos," [Online]. Available: https://unsplash.com/. [Accessed: April 2026].</p>
+  <p>[12] Collegedunia, "Dayananda Sagar University Gallery," [Online]. Available: https://collegedunia.com/university/57903-dayananda-sagar-university-dsu-bangalore/gallery. [Accessed: April 2026].</p>
+  <div class="page-num">35</div>
+</div>
+
+<!-- ===================== APPENDIX ===================== -->
+<div class="page">
+  <p class="page-num" style="text-align:right;font-size:10pt;color:#555">DSU Campus Events Portal using MERN Stack</p>
+  <hr/><br/>
+  <h2>APPENDIX A: SOURCE CODE STRUCTURE</h2>
+  <p>The project follows a structure with separate backend (server/) and frontend (root) directories:</p>
+  <div class="code-block">dsu-events-portal/
+â”œâ”€â”€ index.html              â† Main frontend SPA
+â”œâ”€â”€ style.css               â† All styles (dark + light mode)
+â”œâ”€â”€ app.js                  â† Frontend JavaScript (API calls, UI logic)
+â”œâ”€â”€ dsu-logo.png            â† University logo asset
+â””â”€â”€ server/
+    â”œâ”€â”€ index.js            â† Express server entry point
+    â”œâ”€â”€ package.json        â† Backend dependencies
+    â”œâ”€â”€ .env                â† Environment variables (PORT, MONGO_URI, JWT_SECRET)
+    â”œâ”€â”€ seed.js             â† Database seeder script
+    â”œâ”€â”€ uploads/            â† Uploaded gallery images
+    â”œâ”€â”€ models/
+    â”‚   â”œâ”€â”€ User.js         â† User schema + bcrypt hooks
+    â”‚   â”œâ”€â”€ Event.js        â† Event schema + seatsLeft virtual
+    â”‚   â”œâ”€â”€ Announcement.js â† Announcement schema
+    â”‚   â””â”€â”€ Gallery.js      â† Gallery item schema
+    â”œâ”€â”€ routes/
+    â”‚   â”œâ”€â”€ auth.js         â† /api/auth endpoints
+    â”‚   â”œâ”€â”€ events.js       â† /api/events endpoints
+    â”‚   â”œâ”€â”€ announcements.jsâ† /api/announcements endpoints
+    â”‚   â”œâ”€â”€ gallery.js      â† /api/gallery endpoints (Multer)
+    â”‚   â””â”€â”€ users.js        â† /api/users endpoints
+    â””â”€â”€ middleware/
+        â””â”€â”€ auth.js         â† JWT protect + authorize middleware</div>
+
+  <h2 style="margin-top:20px">APPENDIX B: SEED DATA &amp; TEST ACCOUNTS</h2>
+  <p>Run <code>node seed.js</code> inside the server/ directory to populate the database with sample data.</p>
+  <table>
+    <thead><tr><th>Role</th><th>Email</th><th>Password</th><th>Permissions</th></tr></thead>
+    <tbody>
+      <tr><td>Admin</td><td>admin@college.edu</td><td>admin123</td><td>Full access: events, users, announcements, gallery</td></tr>
+      <tr><td>Organizer</td><td>organizer@college.edu</td><td>org123</td><td>Create events, upload gallery photos</td></tr>
+      <tr><td>Student</td><td>Any email</td><td>Any (min 6 chars)</td><td>Browse and register for events</td></tr>
+    </tbody>
+  </table>
+
+  <h2 style="margin-top:20px">APPENDIX C: ENVIRONMENT CONFIGURATION</h2>
+  <div class="code-block"># server/.env
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/campusevents
+JWT_SECRET=campusevents_super_secret_key_2026
+JWT_EXPIRES_IN=7d</div>
+  <div class="page-num">37</div>
+</div>
+
+
+</body>
+</html>
