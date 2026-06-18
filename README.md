@@ -6,7 +6,7 @@ Official event management portal for **Dayananda Sagar University, Bengaluru**.
 
 - **University:** Dayananda Sagar University
 - **Department:** Computer Science and Engineering (AI & ML)
-- **Students:** Nayan Utkarsh (ENG24AM0233), Mustafiz Khan (ENG24AM0223)
+- **Students:**  Laxmita Raghavendra Shanbhag (ENG24AM0223), Ganesh kumar (ENG24AM0174)
 - **Guide:** Dr. Sugandha Saxena
 - **Year:** 2025-2026
 
